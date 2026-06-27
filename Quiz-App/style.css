@@ -1,0 +1,267 @@
+/* =========================================
+   Quiz App — Styles
+   Palette: violet accent on dark slate
+   ========================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 540px;
+}
+
+/* ---- Screens ---- */
+/* Only the screen with class "active" is visible */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ---- Screen Card (start & result) ---- */
+.screen-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+
+.quiz-icon { font-size: 3.5rem; }
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #a78bfa;            /* violet-400 */
+  letter-spacing: -0.03em;
+}
+
+.app-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.quiz-meta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  width: 100%;
+  background: #0f172a;
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ---- Progress ---- */
+.progress-bar-wrap {
+  background: #1e293b;
+  border-radius: 999px;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #7c3aed;         /* violet-700 */
+  border-radius: 999px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.progress-text {
+  font-size: 0.78rem;
+  color: #64748b;
+  text-align: right;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Question Card ---- */
+.question-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #e2e8f0;
+}
+
+/* ---- Options ---- */
+.options-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.option-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  border-radius: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: #7c3aed;
+  color: #e2e8f0;
+}
+
+/* States set by JavaScript after answering */
+.option-btn.correct {
+  border-color: #10b981;       /* green */
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+}
+
+.option-btn.wrong {
+  border-color: #ef4444;       /* red */
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.option-btn:disabled { cursor: default; }
+
+/* ---- Feedback ---- */
+.feedback {
+  background: #0f172a;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid #7c3aed;
+}
+
+.feedback.hidden { display: none; }
+
+.feedback-msg {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 0.35rem;
+}
+
+.feedback-msg.correct { color: #34d399; }
+.feedback-msg.wrong   { color: #f87171; }
+
+.feedback-explain {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn:hover  { opacity: 0.85; }
+.btn:active { transform: scale(0.97); }
+
+.btn-primary { background: #7c3aed; color: #fff; width: 100%; }
+
+.hidden { display: none !important; }
+
+/* ---- Result Screen ---- */
+.result-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #a78bfa;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.score-fraction {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e2e8f0;
+  line-height: 1;
+}
+
+.score-percent {
+  font-size: 1.1rem;
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.result-msg {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.breakdown {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.breakdown-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  gap: 0.25rem;
+}
+
+.correct-item { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16,185,129,0.3); }
+.wrong-item   { background: rgba(239, 68, 68, 0.1);  border: 1px solid rgba(239,68,68,0.3);  }
+
+.bd-num { font-size: 1.8rem; font-weight: 900; }
+.correct-item .bd-num { color: #34d399; }
+.wrong-item   .bd-num { color: #f87171; }
+
+.bd-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ---- Responsive ---- */
+@media (max-width: 400px) {
+  .question-text { font-size: 1rem; }
+  .option-btn    { font-size: 0.85rem; }
+  .score-fraction { font-size: 2.2rem; }
+}

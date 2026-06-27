@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="app-title">Counter App</h1>
+      <p class="app-subtitle">DOM Manipulation &amp; Event Listeners</p>
+
+      <div class="counter-card">
+        <!-- The count display — updated by JavaScript -->
+        <div class="count-display">
+          <span class="count-label">Current Count</span>
+          <span id="count-value" class="count-value">0</span>
+        </div>
+
+        <!-- Status message shown when count hits limits -->
+        <p id="status-msg" class="status-msg"></p>
+
+        <!-- Control buttons -->
+        <div class="btn-group">
+          <button id="btn-decrease" class="btn btn-decrease">− Decrease</button>
+          <button id="btn-reset" class="btn btn-reset">↺ Reset</button>
+          <button id="btn-increase" class="btn btn-increase">+ Increase</button>
+        </div>
+      </div>
+
+      <!-- History log of button clicks -->
+      <div class="history-section">
+        <h2 class="history-title">Click History</h2>
+        <ul id="history-list" class="history-list">
+          <li class="history-empty">No actions yet. Use the buttons above!</li>
+        </ul>
+        <button id="btn-clear-history" class="btn btn-clear">Clear History</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
