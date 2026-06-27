@@ -224,18 +224,6 @@ node concepts.js
 
 ---
 
-## 📸 Screenshots
-
-> _Add screenshots of each app here after running them locally._
-
-| App | Screenshot |
-|-----|-----------|
-| Counter App | _(screenshot placeholder)_ |
-| To-Do App | _(screenshot placeholder)_ |
-| Quiz App | _(screenshot placeholder)_ |
-
----
-
 ## ✅ Assignment Checklist
 
 | Requirement | Status | Where |
